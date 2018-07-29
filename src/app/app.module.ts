@@ -3,21 +3,24 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { TestComponent } from './components/test/test.component';
+
 import { MessageComponent } from './components/message/message.component';
+import { TableComponent } from './components/widgets/table/table.component';
+import { CarouselComponent } from './components/widgets/carousel/carousel.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
-    MessageComponent
+    MessageComponent,
+    TableComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [MessageComponent]
+  entryComponents: [MessageComponent, TableComponent,CarouselComponent]
 })
 export class AppModule { }

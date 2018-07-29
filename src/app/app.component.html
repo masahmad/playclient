@@ -1,8 +1,34 @@
 <div style="text-align:center">
   <h1>
-      Welcome to {{ title }}!
+    Welcome to {{ title }}!
   </h1>
-  <button (click)="createComponent('hello cpm1')" >click</button>
-  <template #messagecontainer>
-  </template>
+  <button (click)="createMessageComponent('hello cpm1')">message</button> &nbsp;&nbsp;
+  <button (click)="createTableComponent('hello cpm1')">table</button>&nbsp;&nbsp;
+  <button (click)="createCarouselComponent('hello cpm1')">Carousel</button>&nbsp;&nbsp;
+  <button (click)="clear()">clear</button>
+
+
+
+  
+
+
+  <div class="zones" id="zone1" >
+    <template #messagecontainer></template>
+  </div>
+
+
+  <div class="zones" id="zone2">
+  <template #tablecontainer></template>
+  </div>
+
+
+  <div class="zones" id="zone3" >
+  <template #carouselcontainer></template>
+  </div>
+
+
+
+
+
+
 </div>
