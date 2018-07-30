@@ -1,0 +1,38 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to T4 {{ message}}!
+  </h1>
+  <button (click)="createMessageComponent('hello cpm1')">message</button> &nbsp;&nbsp;
+  <button (click)="createTableComponent('hello cpm1')">table</button>&nbsp;&nbsp;
+  <button (click)="createCarouselComponent('hello cpm1')">Carousel</button>&nbsp;&nbsp;
+  <button (click)="clear()">clear</button>
+  <button (click)="testRef()">test  componentRef</button>
+
+<br>
+
+
+  
+
+
+  <div class="zones" id="zone1" >
+    <template #zone1container></template>
+  </div>
+
+
+  <div class="zones" id="zone2">
+  <template #zone2container></template>
+  </div>
+
+
+  <div class="zones" id="zone3" >
+  <template #zone3container></template>
+  </div>
+
+
+  <div class="zones" id="zone4">
+    <template #zone4container></template>
+    </div>
+
+
+
+</div>

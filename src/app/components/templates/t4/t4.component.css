@@ -1,0 +1,33 @@
+
+
+.zones {
+
+    border: 2px dotted #ccc;
+    margin:10px;
+    width:650px;
+    height:400px;
+    display:inline-block;
+}
+
+
+
+
+#zone1 {
+    background-color: red;
+}
+
+#zone2 {
+
+    background-color: green;
+}
+
+
+#zone3 {
+    background-color: blue;  
+}
+
+
+
+#zone4 {
+    background-color: yellow;  
+}

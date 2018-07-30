@@ -6,9 +6,12 @@ import {
   ComponentRef,
   ComponentFactory
 } from '@angular/core';
-import { MessageComponent } from './components/message/message.component';
-import { TableComponent } from './components/widgets/table/table.component';
-import { CarouselComponent } from './components/widgets/carousel/carousel.component';
+
+
+
+//templates
+import { T4Component } from './components/templates/t4/t4.component';
+import { T6Component } from './components/templates/t6/t6.component';
 
 
 
@@ -24,11 +27,7 @@ export class AppComponent {
   componentRef: any;
 
 
-  @ViewChild('messagecontainer', { read: ViewContainerRef }) messageEntry: ViewContainerRef;
-  @ViewChild('tablecontainer', { read: ViewContainerRef }) tableEntry: ViewContainerRef;
-  @ViewChild('carouselcontainer', { read: ViewContainerRef }) carouselEntry: ViewContainerRef;
-
-
+  @ViewChild('templatecontainer', { read: ViewContainerRef }) templateEntry: ViewContainerRef;
 
 
   constructor(private resolver: ComponentFactoryResolver) { }
@@ -38,46 +37,37 @@ export class AppComponent {
 
 
 
-  createMessageComponent(message) {
-    console.log('message',message)
-    this.messageEntry.clear();
-    const factory = this.resolver.resolveComponentFactory(MessageComponent);
-    const componentRef = this.messageEntry.createComponent(factory);
-    componentRef.instance.message = message;
-}
+  createT4(message) {
+    console.log('message', message)
+    this.templateEntry.clear();
+    const factory = this.resolver.resolveComponentFactory(T4Component);
+    const componentRef = this.templateEntry.createComponent(factory);
+     componentRef.instance.message = message;
+  }
 
 
 
-createTableComponent(message) {
-  console.log('message',message)
-  this.tableEntry.clear();
-  const factory = this.resolver.resolveComponentFactory(TableComponent);
-  const componentRef = this.tableEntry.createComponent(factory);
-  //componentRef.instance.message = message;
-}
+  createT6(message) {
+    console.log('message', message)
+    this.templateEntry.clear();
+    const factory = this.resolver.resolveComponentFactory(T6Component);
+    const componentRef = this.templateEntry.createComponent(factory);
+    //componentRef.instance.message = message;
+  }
 
 
 
 
-createCarouselComponent(message) {
-  console.log('message',message)
-  this.carouselEntry.clear();
-  const factory = this.resolver.resolveComponentFactory(CarouselComponent);
-  const componentRef = this.carouselEntry.createComponent(factory);
-  //componentRef.instance.message = message;
-}
 
 
+  clear() {
+    this.templateEntry.clear();
+  }
 
-clear() {
-  this.carouselEntry.clear();
-  this.messageEntry.clear();
-  this.tableEntry.clear();
-}
 
-destroyComponent() {
-  this.componentRef.destroy();
-}
+  destroyComponent() {
+    this.componentRef.destroy();
+  }
 
 
 

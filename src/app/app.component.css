@@ -1,28 +1,4 @@
+#templatecontainer {
 
-.zones {
-
-    border: 1px dotted #ccc;
-    margin:10px;
+    border: 1px dotted red;
 }
-
-#zone1 {
-
-    background-color: red;
-    
-}
-
-#zone2 {
-
-    background-color: green;
-    
-}
-
-
-#zone3 {
-
-    background-color: blue;
-    position: absolute;
-    width:96%;
-    bottom: 10px;
-}
-
