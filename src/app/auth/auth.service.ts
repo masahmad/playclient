@@ -18,8 +18,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 export class AuthService {
 
   
-
-  private userIsAuthenticated =false;
+private userIsAuthenticated =false;
 authChange = new Subject<boolean>();
 
 
@@ -28,8 +27,8 @@ authChange = new Subject<boolean>();
 constructor(
     private router: Router, 
     private afAuth: AngularFireAuth) {
-
 }
+
 
 registerUser(authData: AuthData) {
 
@@ -55,11 +54,6 @@ registerUser(authData: AuthData) {
 
 login(authData: AuthData) {
 
-    // this.user = {
-    //     email: authData.email,
-    //     userId: Math.round(Math.random()*10000).toString()
-    // }
-
     this.afAuth.auth.signInWithEmailAndPassword(
         authData.email,
         authData.password
@@ -67,13 +61,12 @@ login(authData: AuthData) {
         console.log(result);
         this.userIsAuthenticated=true;
         this.authChange.next(true);
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
     })
     .catch(error => {
         console.log(error);
     })
 
-   
 }
 
 

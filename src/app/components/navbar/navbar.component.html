@@ -1,0 +1,17 @@
+<p>
+  navbar works! {{isAuth}}
+</p>
+
+<li *ngIf="!isAuth">
+<a routerLink='/login'>login</a>&nbsp;
+</li>
+
+
+<li *ngIf="isAuth">
+<a style="cursor:pointer" (click)="logout()">logout</a>
+</li>
+
+
+<li *ngIf="isAuth">
+<a routerLink='/home'>home</a>
+</li>

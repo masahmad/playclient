@@ -18,6 +18,9 @@ import {AngularFireModule} from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     CarouselComponent,
     T4Component,
     T6Component,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
