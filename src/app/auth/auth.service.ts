@@ -20,22 +20,23 @@ export class AuthService {
   
 private userIsAuthenticated =false;
 authChange = new Subject<boolean>();
-
+userId:string;
 
 
 
 constructor(
     private router: Router, 
     private afAuth: AngularFireAuth) {
+
+        this.afAuth.authState.subscribe(user => {
+            if (user) this.userId = user.uid;
+        });
 }
 
 
 registerUser(authData: AuthData) {
 
-    // this.user = {
-    //     email: authData.email,
-    //     userId: Math.round(Math.random()*10000).toString()
-    // }
+
 
     this.afAuth.auth.createUserWithEmailAndPassword(
         authData.email,authData.password
@@ -89,6 +90,7 @@ isAuth() {
 
 getCurrentUSer() {
 
-   // var user = firebase.auth().currentUser;
+return   this.userId;
+//firebase.auth().currentUser;
 }
 }

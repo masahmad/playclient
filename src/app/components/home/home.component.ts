@@ -16,6 +16,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 //templates
 import { T4Component } from '../../components/templates/t4/t4.component';
 import { T6Component } from '../../components/templates/t6/t6.component';
+import { AuthService } from '../../auth/auth.service';
 
 
 @Component({
@@ -30,14 +31,18 @@ export class HomeComponent implements OnInit {
   componentRef: any;
   @ViewChild('templatecontainer', { read: ViewContainerRef }) templateEntry: ViewContainerRef;
 
+  private container: any;
 
   constructor(
     private resolver: ComponentFactoryResolver,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private authService:AuthService
   ) { }
 
   ngOnInit() {
 
+    console.log("auth user xxxx ",this.authService.getCurrentUSer());
+//    this.container = 
     this.db.collection('/containers/containerdoc/conlist')
     .valueChanges()
     .subscribe(result => {
