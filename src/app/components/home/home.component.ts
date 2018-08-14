@@ -32,18 +32,21 @@ export class HomeComponent implements OnInit {
   @ViewChild('templatecontainer', { read: ViewContainerRef }) templateEntry: ViewContainerRef;
 
   private container: any;
+  private user;
 
   constructor(
     private resolver: ComponentFactoryResolver,
     private db: AngularFirestore,
     private authService:AuthService
+   
   ) { }
 
   ngOnInit() {
 
-    console.log("auth user xxxx ",this.authService.getCurrentUSer());
+    this.user = this.authService.getCurrentUSer();
+    console.log("auth user xxxx ",this.user);
 //    this.container = 
-    this.db.collection('/containers/containerdoc/conlist')
+    this.db.collection(`/users/${this.user}/containers/`)
     .valueChanges()
     .subscribe(result => {
       console.log(result);
